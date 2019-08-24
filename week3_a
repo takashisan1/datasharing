@@ -1,1 +1,16 @@
-hello world
+makeCacheMatrix <- function(x = matrix()) {
+  invMatrix <- NULL
+
+  #set the value of the Matrix
+  setMatrix <- function(y) {
+    x <<- y
+    invMatrix <<- NULL
+  }
+
+  getMatrix <- function() x                              #get the value of the Matrix
+  setInverse <- function(inverse) invMatrix <<- inverse  #set the value of the invertible matrix
+  getInverse <- function() invMatrix                     #get the value of the invertible matrix
+  list(setMatrix = setMatrix, getMatrix = getMatrix,
+       setInverse = setInverse, getInverse = getInverse)
+
+}
